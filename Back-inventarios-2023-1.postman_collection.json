@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "e946c5e3-c2e1-4e01-9665-378dee641d65",
+		"name": "Back-inventarios-2023-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4683424"
+	},
+	"item": [
+		{
+			"name": "tipoequipos",
+			"item": [
+				{
+					"name": "CrearTipoEquipo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Computador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5000/api/tipoequipos/"
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerTiposEquipos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/tipoequipos?estado=true",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tipoequipos"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "estados",
+			"item": [
+				{
+					"name": "obtenerEstados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:5000/api/estados/"
+					},
+					"response": []
+				},
+				{
+					"name": "crearEstado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"en bodega\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5000/api/estados/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "crearUsuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "localhost:5000/api/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:5000/api/usuarios"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "marcas",
+			"item": [
+				{
+					"name": "crearMarca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Lenovo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5000/api/marcas"
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerMarcas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/marcas?estado=true",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"marcas"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inventarios",
+			"item": [
+				{
+					"name": "crearInventario",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerInventario",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/hello"
+			},
+			"response": []
+		}
+	]
+}
