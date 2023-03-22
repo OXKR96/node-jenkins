@@ -68,5 +68,21 @@ const getInventarios = async (req = request,
         }
 }
 
+// actualizar inventario
+const updateInventarioByID = async (req = request, 
+    res = response) => {
 
-module.exports = { createInventario, getInventarios}
+    try{
+        const { id } = req.params
+        const data = req.body
+        const inventario  = await Inventario.findByIdAndUpdate(id, data, {new: true})
+        return res.status(201).json(inventario)
+    }catch(e){
+        console.log(e)
+        return res.status(500).json({msj: 'Error'}) 
+    }
+
+}
+
+
+module.exports = { createInventario, getInventarios, updateInventarioByID}

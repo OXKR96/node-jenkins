@@ -40,6 +40,7 @@ const getEstados = async (req = request,
             })
         }
 }
-
+// findOne --> update
+// findByIdAndUpdate
 
 module.exports = {createEstado, getEstados}
