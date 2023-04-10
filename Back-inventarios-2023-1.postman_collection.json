@@ -163,8 +163,18 @@
 				{
 					"name": "crearInventario",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serial\": \"xbb11112233\",\r\n    \"modelo\": \"modelo3\",\r\n    \"descripcion\": \"portatil muy chevere\",\r\n    \"foto\": \"https://www.worten.es/i/dc40f0b7d6c9ef44a824492eed988df286acc94c.jpg\",\r\n    \"color\": \"negro\",\r\n    \"fechaCompra\": \"2023-02-15\",\r\n    \"precio\": 550,\r\n    \"usuario\": {\r\n        \"_id\": \"64150f7830d0d60f4bf3657a\"\r\n    },\r\n    \"marca\": {\r\n        \"_id\": \"6415100630d0d60f4bf36583\"\r\n    },\r\n    \"estado\": {\r\n        \"_id\": \"64150e1c30d0d60f4bf36570\"\r\n    },\r\n    \"tipoEquipo\": {\r\n        \"_id\": \"6415121d88b0d008d94c0b27\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5000/api/inventarios/"
 					},
 					"response": []
 				},

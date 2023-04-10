@@ -60,6 +60,22 @@ const getInventarios = async (req = request,
     res = response) => {
         try{
             const inventariosDB = await Inventario.find()//select * from inventarios
+                .populate({
+                    path: 'usuario',
+                    match: { estado: true }
+                })
+                .populate({
+                    path: 'marca',
+                    match: { estado: true }
+                })
+                .populate({
+                    path: 'estado',
+                    match: { estado: true }
+                })
+                .populate({
+                    path: 'tipoEquipo',
+                    match: { estado: true }
+                })
             return res.json(inventariosDB)
         }catch(e){
             return res.status(500).json({
@@ -85,4 +101,4 @@ const updateInventarioByID = async (req = request,
 }
 
 
-module.exports = { createInventario, getInventarios, updateInventarioByID}
+module.exports = { createInventario, getInventarios, updateInventarioByID }
