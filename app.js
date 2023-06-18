@@ -9,17 +9,12 @@ app.use(cors({
     origin: '*'
 }))
 
-const tipoEquipo = require('./routes/tipoEquipo')
-const estado = require('./routes/estado')
-const usuario = require('./routes/usuario')
-const marca = require('./routes/marca')
-const inventario = require('./routes/inventario')
+
+const proyecto = require('./routes/proyecto')
 
 // middlewares
-app.use('/api/tiposequipos', tipoEquipo)
-app.use('/api/estados', estado)
-app.use('/api/usuarios', usuario)
-app.use('/api/marcas', marca)
-app.use('/api/inventarios', inventario)
+
+app.use('/api/proyectos',proyecto)
+
 
 module.exports = app
