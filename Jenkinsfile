@@ -1,3 +1,5 @@
+@Library('docker') _
+
 pipeline{
     agent any
 
@@ -14,14 +16,11 @@ pipeline{
           
             steps{
                 script{
-
-                
-                  withCredentials([
-                    string(credentialsId:'MONGO_URI',variable:'MONGO_URI')
-                
-            ]){
-                 docker.build('proyectos-backend-micro:v1','--build-arg MONGO_URI=${MONGO_URI}.')
-            }
+                    withCredentials([
+                        string(credentialsId:'MONGO_URI',variable:'MONGO_URI')
+                    ]){
+                        docker.build('proyectos-backend-micro:v1','--build-arg MONGO_URI=${MONGO_URI}.')
+                    }
                 }
             }
 
@@ -30,17 +29,13 @@ pipeline{
             steps{
                 script{
                     withCredentials([
-                    string(credentialsId:'MONGO_URI',variable:'MONGO_URI')
-                
-            ]){
-                  sh"""
-                        sed 's|\\${MONGO_URI}|${MONGO_URI}|g' docker-compose.yml > docker-compose-update.yml
-                        docker-compose -f docker-compose-update.yml up -d 
-
-                    """
-            }
-
-                   
+                        string(credentialsId:'MONGO_URI',variable:'MONGO_URI')
+                    ]){
+                        sh"""
+                            sed 's|\\${MONGO_URI}|${MONGO_URI}|g' docker-compose.yml > docker-compose-update.yml
+                            docker-compose -f docker-compose-update.yml up -d 
+                        """
+                    }
                 }
             }
 
